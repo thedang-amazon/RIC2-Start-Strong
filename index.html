@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Strong - We Missed You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F5F5F5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #232F3E;
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.85;
+        }
+
+        .content {
+            padding: 24px 20px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .raffle-badge {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .email-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            background: #FF9900;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            margin: 20px 0;
+            transition: background 0.2s;
+        }
+
+        .email-btn:hover, .email-btn:active {
+            background: #E88B00;
+        }
+
+        .steps {
+            background: #F9F9F9;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+
+        .steps h3 {
+            font-size: 14px;
+            color: #232F3E;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .steps ol {
+            padding-left: 20px;
+        }
+
+        .steps li {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .template-section {
+            margin: 20px 0;
+        }
+
+        .template-section h3 {
+            font-size: 14px;
+            color: #232F3E;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .template-box {
+            background: #FFFDE7;
+            border: 1px solid #FFE082;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .template-box .field-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .template-box .placeholder {
+            color: #D32F2F;
+            font-style: italic;
+        }
+
+        .copy-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #232F3E;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover, .copy-btn:active {
+            background: #37475A;
+        }
+
+        .copy-msg {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .divider {
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+            margin: 16px 0;
+        }
+
+        .manual-section {
+            text-align: center;
+            padding: 16px;
+            background: #F5F5F5;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .manual-section p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .manual-section .email-address {
+            font-size: 16px;
+            font-weight: bold;
+            color: #232F3E;
+            word-break: break-all;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+
+        .window-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>START STRONG</h1>
+        <p>We Missed You at Start-Up</p>
+    </div>
+
+    <div class="content">
+        <p class="intro">
+            Couldn't make it to start-up? Let us know why — your feedback helps us improve.
+            <br>
+            <span class="raffle-badge">Earn 0.5 raffle ticket</span>
+        </p>
+
+        <a id="emailBtn" class="email-btn" href="#">
+            Tap to Open Email
+        </a>
+
+        <div class="steps">
+            <h3>How It Works</h3>
+            <ol>
+                <li>Tap the button above to open your email app</li>
+                <li>Replace the <strong>[blanks]</strong> with your info</li>
+                <li>Hit <strong>Send</strong> — done!</li>
+            </ol>
+        </div>
+
+        <div class="template-section">
+            <h3>What the Email Looks Like</h3>
+            <div class="template-box"><span class="field-label">To:</span> ric2-standup@amazon.com
+<span class="field-label">Subject:</span> Missed Start-Up
+
+<span class="field-label">Login:</span> <span class="placeholder">[your Amazon login, e.g., jsmith]</span>
+
+<span class="field-label">Window:</span> <span class="placeholder">[enter 1, 2, 3, or 4]</span>
+  1 = 6:30AM / 7:00AM
+  2 = 12:00PM / 12:30PM
+  3 = 5:00PM / 5:30PM
+  4 = 11:00PM / 11:30PM
+
+<span class="field-label">Reason:</span> <span class="placeholder">[copy all that apply]</span>
+  - Didn't know where/when start-up was
+  - Work assignment prevented me from attending
+  - Arrived late
+  - I don't understand the importance of start-up
+  - Start-up doesn't feel relevant to my work
+  - Start-up is not engaging / feels repetitive
+  - Other: ___________
+
+<span class="field-label">Feedback (optional):</span> <span class="placeholder">[what could make start-up better?]</span></div>
+
+            <button class="copy-btn" onclick="copyTemplate()">Copy Email Template</button>
+            <p class="copy-msg" id="copyMsg">Copied! Paste into a new email.</p>
+        </div>
+
+        <div class="divider">— or —</div>
+
+        <div class="manual-section">
+            <p>If the button doesn't work, email directly:</p>
+            <p class="email-address">ric2-standup@amazon.com</p>
+            <p style="margin-top:8px; font-size:12px; color:#888;">Use the template above — copy and paste it into the email body</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        Start Strong Program — RIC2<br>
+        One submission per missed start-up window. Two submissions = 1 full raffle entry.<br>
+        Attending start-up earns 1 full entry every time.
+    </div>
+</div>
+
+<script>
+    // Build the mailto link
+    const toEmail = 'ric2-standup@amazon.com';
+    const subject = 'Missed Start-Up';
+    const body = `Login: [your Amazon login, e.g., jsmith]
+
+Window: [enter 1, 2, 3, or 4]
+  1 = 6:30AM / 7:00AM
+  2 = 12:00PM / 12:30PM
+  3 = 5:00PM / 5:30PM
+  4 = 11:00PM / 11:30PM
+
+Reason: [copy all that apply from the list below]
+  - Didn't know where/when start-up was
+  - Work assignment prevented me from attending
+  - Arrived late
+  - I don't understand the importance of start-up
+  - Start-up doesn't feel relevant to my work
+  - Start-up is not engaging / feels repetitive
+  - Other: ___________
+
+Feedback (optional): [what could make start-up easier or more worthwhile for you to attend?]`;
+
+    const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Set the button href
+    document.getElementById('emailBtn').setAttribute('href', mailtoLink);
+
+    // Copy template function
+    function copyTemplate() {
+        const templateText = `To: ric2-standup@amazon.com
+Subject: Missed Start-Up
+
+Login: [your Amazon login, e.g., jsmith]
+
+Window: [enter 1, 2, 3, or 4]
+  1 = 6:30AM / 7:00AM
+  2 = 12:00PM / 12:30PM
+  3 = 5:00PM / 5:30PM
+  4 = 11:00PM / 11:30PM
+
+Reason: [copy all that apply from the list below]
+  - Didn't know where/when start-up was
+  - Work assignment prevented me from attending
+  - Arrived late
+  - I don't understand the importance of start-up
+  - Start-up doesn't feel relevant to my work
+  - Start-up is not engaging / feels repetitive
+  - Other: ___________
+
+Feedback (optional): [what could make start-up easier or more worthwhile for you to attend?]`;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(templateText).then(function() {
+                showCopyMsg();
+            }).catch(function() {
+                fallbackCopy(templateText);
+            });
+        } else {
+            fallbackCopy(templateText);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showCopyMsg();
+        } catch(e) {
+            alert('Could not copy. Please manually select and copy the template above.');
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showCopyMsg() {
+        const msg = document.getElementById('copyMsg');
+        msg.style.display = 'block';
+        setTimeout(function() {
+            msg.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
