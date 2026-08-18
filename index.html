@@ -213,12 +213,6 @@
             color: #999;
             border-top: 1px solid #eee;
         }
-
-        .window-info {
-            font-size: 12px;
-            color: #666;
-            margin-top: 4px;
-        }
     </style>
 </head>
 <body>
@@ -294,56 +288,61 @@
 </div>
 
 <script>
-    // Build the mailto link
+    // Build the mailto link using %0D%0A for line breaks (works across email apps)
+    const NL = '\r\n';
     const toEmail = 'ric2-standup@amazon.com';
     const subject = 'Missed Start-Up';
-    const body = `Login: [your Amazon login, e.g., jsmith]
+    const body = [
+        'Login: [your Amazon login, e.g., jsmith]',
+        '',
+        'Window: [enter 1, 2, 3, or 4]',
+        '  1 = 6:30AM / 7:00AM',
+        '  2 = 12:00PM / 12:30PM',
+        '  3 = 5:00PM / 5:30PM',
+        '  4 = 11:00PM / 11:30PM',
+        '',
+        'Reason: [copy all that apply]',
+        '  - Didn\'t know where/when start-up was',
+        '  - Work assignment prevented me from attending',
+        '  - Arrived late',
+        '  - I don\'t understand the importance of start-up',
+        '  - Start-up doesn\'t feel relevant to my work',
+        '  - Start-up is not engaging / feels repetitive',
+        '  - Other: ___________',
+        '',
+        'Feedback (optional): [what could make start-up better?]'
+    ].join(NL);
 
-Window: [enter 1, 2, 3, or 4]
-  1 = 6:30AM / 7:00AM
-  2 = 12:00PM / 12:30PM
-  3 = 5:00PM / 5:30PM
-  4 = 11:00PM / 11:30PM
-
-Reason: [copy all that apply from the list below]
-  - Didn't know where/when start-up was
-  - Work assignment prevented me from attending
-  - Arrived late
-  - I don't understand the importance of start-up
-  - Start-up doesn't feel relevant to my work
-  - Start-up is not engaging / feels repetitive
-  - Other: ___________
-
-Feedback (optional): [what could make start-up easier or more worthwhile for you to attend?]`;
-
-    const mailtoLink = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = 'mailto:' + toEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
     // Set the button href
     document.getElementById('emailBtn').setAttribute('href', mailtoLink);
 
     // Copy template function
     function copyTemplate() {
-        const templateText = `To: ric2-standup@amazon.com
-Subject: Missed Start-Up
-
-Login: [your Amazon login, e.g., jsmith]
-
-Window: [enter 1, 2, 3, or 4]
-  1 = 6:30AM / 7:00AM
-  2 = 12:00PM / 12:30PM
-  3 = 5:00PM / 5:30PM
-  4 = 11:00PM / 11:30PM
-
-Reason: [copy all that apply from the list below]
-  - Didn't know where/when start-up was
-  - Work assignment prevented me from attending
-  - Arrived late
-  - I don't understand the importance of start-up
-  - Start-up doesn't feel relevant to my work
-  - Start-up is not engaging / feels repetitive
-  - Other: ___________
-
-Feedback (optional): [what could make start-up easier or more worthwhile for you to attend?]`;
+        const templateText = [
+            'To: ric2-standup@amazon.com',
+            'Subject: Missed Start-Up',
+            '',
+            'Login: [your Amazon login, e.g., jsmith]',
+            '',
+            'Window: [enter 1, 2, 3, or 4]',
+            '  1 = 6:30AM / 7:00AM',
+            '  2 = 12:00PM / 12:30PM',
+            '  3 = 5:00PM / 5:30PM',
+            '  4 = 11:00PM / 11:30PM',
+            '',
+            'Reason: [copy all that apply]',
+            '  - Didn\'t know where/when start-up was',
+            '  - Work assignment prevented me from attending',
+            '  - Arrived late',
+            '  - I don\'t understand the importance of start-up',
+            '  - Start-up doesn\'t feel relevant to my work',
+            '  - Start-up is not engaging / feels repetitive',
+            '  - Other: ___________',
+            '',
+            'Feedback (optional): [what could make start-up better?]'
+        ].join('\n');
 
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(templateText).then(function() {
