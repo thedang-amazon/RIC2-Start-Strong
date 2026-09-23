@@ -10,7 +10,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #F5F5F5;
@@ -20,7 +19,6 @@
             align-items: center;
             padding: 20px;
         }
-
         .container {
             max-width: 500px;
             width: 100%;
@@ -29,29 +27,24 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-
         .header {
             background: #232F3E;
             color: white;
             padding: 24px 20px;
             text-align: center;
         }
-
         .header h1 {
             font-size: 26px;
             margin-bottom: 6px;
             letter-spacing: 0.5px;
         }
-
         .header p {
             font-size: 15px;
             opacity: 0.85;
         }
-
         .content {
             padding: 24px 20px;
         }
-
         .intro {
             text-align: center;
             font-size: 15px;
@@ -59,7 +52,6 @@
             margin-bottom: 24px;
             line-height: 1.5;
         }
-
         .raffle-badge {
             display: inline-block;
             background: #FF9900;
@@ -70,7 +62,37 @@
             font-weight: bold;
             margin-top: 8px;
         }
-
+        .raffle-info {
+            background: #FFFDE7;
+            border: 1px solid #FFE082;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin: 20px 0;
+        }
+        .raffle-info h3 {
+            font-size: 14px;
+            color: #232F3E;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .raffle-info p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .raffle-info .entry-icon {
+            display: inline-block;
+            width: 22px;
+        }
+        .raffle-info .fine-print {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
         .email-btn {
             display: block;
             width: 100%;
@@ -85,18 +107,15 @@
             margin: 20px 0;
             transition: background 0.2s;
         }
-
         .email-btn:hover, .email-btn:active {
             background: #E88B00;
         }
-
         .steps {
             background: #F9F9F9;
             border-radius: 10px;
             padding: 18px;
             margin: 20px 0;
         }
-
         .steps h3 {
             font-size: 14px;
             color: #232F3E;
@@ -104,22 +123,18 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .steps ol {
             padding-left: 20px;
         }
-
         .steps li {
             font-size: 14px;
             color: #444;
             margin-bottom: 8px;
             line-height: 1.4;
         }
-
         .template-section {
             margin: 20px 0;
         }
-
         .template-section h3 {
             font-size: 14px;
             color: #232F3E;
@@ -127,7 +142,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .template-box {
             background: #FFFDE7;
             border: 1px solid #FFE082;
@@ -139,17 +153,14 @@
             white-space: pre-wrap;
             word-break: break-word;
         }
-
         .template-box .field-label {
             font-weight: bold;
             color: #333;
         }
-
         .template-box .placeholder {
             color: #D32F2F;
             font-style: italic;
         }
-
         .copy-btn {
             display: block;
             width: 100%;
@@ -165,11 +176,9 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-
         .copy-btn:hover, .copy-btn:active {
             background: #37475A;
         }
-
         .copy-msg {
             text-align: center;
             color: #4CAF50;
@@ -177,14 +186,12 @@
             margin-top: 8px;
             display: none;
         }
-
         .divider {
             text-align: center;
             color: #999;
             font-size: 13px;
             margin: 16px 0;
         }
-
         .manual-section {
             text-align: center;
             padding: 16px;
@@ -192,20 +199,17 @@
             border-radius: 8px;
             margin-top: 16px;
         }
-
         .manual-section p {
             font-size: 13px;
             color: #666;
             margin-bottom: 6px;
         }
-
         .manual-section .email-address {
             font-size: 16px;
             font-weight: bold;
             color: #232F3E;
             word-break: break-all;
         }
-
         .footer {
             text-align: center;
             padding: 16px 20px;
@@ -216,24 +220,26 @@
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="header">
         <h1>START STRONG</h1>
         <p>We Missed You at Start-Up</p>
     </div>
-
     <div class="content">
         <p class="intro">
             Couldn't make it to start-up? Let us know why — your feedback helps us improve.
             <br>
             <span class="raffle-badge">Earn 0.5 raffle ticket</span>
         </p>
-
+        <div class="raffle-info">
+            <h3>How Raffle Entries Work</h3>
+            <p><span class="entry-icon">🎟️</span> <strong>Attending start-up = 1 full entry</strong>, every time.</p>
+            <p><span class="entry-icon">📝</span> Each feedback submission = <strong>0.5 entry</strong>, so <strong>2 submissions = 1 full entry</strong>.</p>
+            <p class="fine-print">One submission per missed start-up window.</p>
+        </div>
         <a id="emailBtn" class="email-btn" href="#">
             Tap to Open Email
         </a>
-
         <div class="steps">
             <h3>How It Works</h3>
             <ol>
@@ -242,7 +248,6 @@
                 <li>Hit <strong>Send</strong> — done!</li>
             </ol>
         </div>
-
         <div class="template-section">
             <h3>What the Email Looks Like</h3>
             <div class="template-box"><span class="field-label">To:</span> ric2-standup@amazon.com
@@ -266,27 +271,22 @@
   - Other: ___________
 
 <span class="field-label">Feedback (optional):</span> <span class="placeholder">[what could make start-up better?]</span></div>
-
             <button class="copy-btn" onclick="copyTemplate()">Copy Email Template</button>
             <p class="copy-msg" id="copyMsg">Copied! Paste into a new email.</p>
         </div>
-
         <div class="divider">— or —</div>
-
         <div class="manual-section">
             <p>If the button doesn't work, email directly:</p>
             <p class="email-address">ric2-standup@amazon.com</p>
             <p style="margin-top:8px; font-size:12px; color:#888;">Use the template above — copy and paste it into the email body</p>
         </div>
     </div>
-
     <div class="footer">
         Start Strong Program — RIC2<br>
         One submission per missed start-up window. Two submissions = 1 full raffle entry.<br>
         Attending start-up earns 1 full entry every time.
     </div>
 </div>
-
 <script>
     // Build the mailto link using %0D%0A for line breaks (works across email apps)
     const NL = '\r\n';
@@ -312,12 +312,9 @@
         '',
         'Feedback (optional): [what could make start-up better?]'
     ].join(NL);
-
     const mailtoLink = 'mailto:' + toEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
     // Set the button href
     document.getElementById('emailBtn').setAttribute('href', mailtoLink);
-
     // Copy template function
     function copyTemplate() {
         const templateText = [
@@ -343,7 +340,6 @@
             '',
             'Feedback (optional): [what could make start-up better?]'
         ].join('\n');
-
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(templateText).then(function() {
                 showCopyMsg();
@@ -354,7 +350,6 @@
             fallbackCopy(templateText);
         }
     }
-
     function fallbackCopy(text) {
         const textarea = document.createElement('textarea');
         textarea.value = text;
@@ -370,7 +365,6 @@
         }
         document.body.removeChild(textarea);
     }
-
     function showCopyMsg() {
         const msg = document.getElementById('copyMsg');
         msg.style.display = 'block';
@@ -379,6 +373,5 @@
         }, 3000);
     }
 </script>
-
 </body>
 </html>
